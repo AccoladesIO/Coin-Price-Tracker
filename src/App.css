@@ -5,6 +5,7 @@
   background-position: center;
   background-size: cover;
   position: relative;
+  padding: 2rem;
 }
 nav{
   background: black;
@@ -17,6 +18,31 @@ nav h2{
   text-align: center;
   font-size: 2rem;
 }
+.top-level-head{
+  background: transparent;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  animation: scrollLeft 10s ease-in-out infinite;
+  color: white;
+  font-size: 1.4rem;
+  font-family: primaryFont;
+}
+@keyframes scrollLeft {
+  0%{
+    transform: translateX(100px);
+    opacity: 1;
+  }
+  /* 50%{
+    transform: translateX(0);
+  } */
+  100%{
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+}
 .text-box{
   display: flex;
   justify-content: center;
@@ -26,19 +52,29 @@ nav h2{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  user-select: none;
 }
 .heading-main{
   font-size: 5.2rem;
   line-height: 1.1;
   text-align: center;
   margin-bottom: 2rem;
+  font-family: secFont;
 }
 .heading-sub{
-  font-size: 2rem;
+  font-size: 1.6rem;
   text-align: center;
   margin-bottom: 2rem;
 }
-
+@media screen and (max-width: 600px){
+  .heading-main{
+    font-size: 4.4rem;
+    line-height: 1;
+  }
+  .heading-sub{
+    line-height: 1.2;
+  }
+}
 
 .line{
   width: 10px;

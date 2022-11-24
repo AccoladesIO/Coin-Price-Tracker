@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <nav>
         <h2>
-            CrypTrack
+            CrypTrack.io
         </h2>
     </nav>
   )

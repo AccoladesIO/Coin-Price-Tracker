@@ -1,14 +1,24 @@
 import React from 'react'
-import img from '../assets/7.png'
+import { NavLink as Link } from 'react-router-dom'
+import {AiOutlineLineChart} from 'react-icons/ai'
 
 const Navbar = () => {
-  return (
-    <nav>
-        <h2>
-            CrypTrack.io
-        </h2>
-    </nav>
-  )
+    return (
+        <nav>
+            <span className='logo'>
+               <AiOutlineLineChart /> CrypTrack.io
+            </span>
+            <span className='flex'>
+
+            <Link to="/" className='link'>
+                Home
+            </Link>
+            <Link to="/stats" className='link'>
+              Stats
+            </Link>
+            </span>
+        </nav>
+    )
 }
 
 export default Navbar

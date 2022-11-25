@@ -4,7 +4,7 @@ import '../App.css'
 const Hero = () => {
   return (
     <main className='hero-main'>
-        <p className='top-level-head'> CRYPTRACK.IO FOR NFTs COMING SOON!!!</p>
+        {/* <p className='top-level-head'> CRYPTRACK.IO FOR NFTs COMING SOON!!!</p> */}
         <article className='text-box'>
             <h1 className='heading-main'>
             Safe and Simple Crypto Tracking All in One Place
@@ -20,6 +20,12 @@ const Hero = () => {
                 <button className='btn'>Get Started</button>
             </div>
         </article>
+        <div className="img-box">
+            <img src="../src/assets/1.svg" alt="" />
+            <img src="../src/assets/2.svg" alt="" />
+            <img src="../src/assets/3.svg" alt="" />
+            <img src="../src/assets/5.svg" alt="" />
+        </div>
     </main>
   )
 }

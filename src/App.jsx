@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css'
+import DisplayBoard from "./components/DisplayBoard";
 import Hero from './components/Hero'
 import Navbar from './components/Navbar'
 import Stats from './components/Stats'
@@ -25,6 +26,7 @@ function App() {
                 <Stats />
               </>
             } />
+            <Route path='/repo/:name' element={<DisplayBoard />}/>
           <Route path='*' element={
             <Error />
           } />

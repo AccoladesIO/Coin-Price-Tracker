@@ -26,7 +26,7 @@ function App() {
                 <Stats />
               </>
             } />
-            <Route path='/repo/:name' element={<DisplayBoard />}/>
+            <Route path='/stats/:name' element={<DisplayBoard />}/>
           <Route path='*' element={
             <Error />
           } />

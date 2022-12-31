@@ -58,11 +58,15 @@ nav h2{
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  position: absolute;
+  /* position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
   user-select: none;
+}
+.img-small{
+  width: 200px;
+  margin: 2rem;
 }
 .heading-main{
   font-size: 5.2rem;
@@ -70,8 +74,12 @@ nav h2{
   text-align: center;
   margin-bottom: 2rem;
   font-family: secFont;
+  width: 70%;
+  margin: 0 auto;
 }
 .heading-sub{
+  width: 60%;
+  margin: 0 auto;
   font-size: 1.6rem;
   text-align: center;
   margin-bottom: 2rem;

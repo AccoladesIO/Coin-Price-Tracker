@@ -13,7 +13,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  list-style: none;
   /* max-width: 100vh; */
+}
+a{
+  color: goldenrod;
+  text-decoration: none;
 }
 *{
   margin: 0;

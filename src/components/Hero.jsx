@@ -7,7 +7,7 @@ const Hero = () => {
     <main className='hero-main'>
         {/* <p className='top-level-head'> CRYPTRACK.IO FOR NFTs COMING SOON!!!</p> */}
         <article className='text-box'>
-          <img src="../src/assets/Exchange-currency.svg" alt="Exchange Image" className='img-small'/>
+          <img src="../src/assets/Exchange-currency.png" alt="Exchange Image" className='img-small'/>
           {/* <img src="../src/assets/Crypto-trading.svg" alt="Exchange Image" className='img-small'/> */}
             <h1 className='heading-main'>
             Safe and Simple Crypto Tracking All in One Place

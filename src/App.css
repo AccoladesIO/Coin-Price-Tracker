@@ -227,6 +227,7 @@ nav{
   border-radius: 0 3px 3px 0;
   font-family: secFont;
 }
+
 .stats-article{
   max-width: 95%;
   margin: 2rem auto;
@@ -235,6 +236,7 @@ nav{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  animation:  animate 1s ease-in;
 }
 .indent{
   display: flex;
@@ -372,7 +374,17 @@ nav{
   width: 90%;
   margin: 2rem auto;
   height: 50rem;
-
+  animation: animate 1s ease-in;
+}
+@keyframes animate {
+  from{
+    opacity: 0;
+    scale: 0.99;
+  }
+  to{
+    opacity: 1;
+    scale: 1.01;
+  }
 }
 .coin-display > aside{
   display: flex;

@@ -30,7 +30,7 @@ const DisplayBoard = () => {
         </aside>
         <article> 
         <p className='indent'>Coin: {item.name}</p>
-        <p>Market Cap Rank: ${item.market_cap_rank.toLocaleString()}</p>
+        <p>Market Cap Rank: {item.market_cap_rank.toLocaleString()}</p>
         <p>Current Price: ${item.current_price.toLocaleString()}</p>
         <p>High (24h): ${item.high_24h.toLocaleString()}</p>
         <p>Low (24h): ${item.low_24h.toLocaleString()}</p>

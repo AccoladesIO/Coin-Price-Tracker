@@ -1,44 +1,28 @@
 import React from 'react'
-import { useEffect, useState } from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import Loader from './Loader'
+import { useFetch } from './useFetch'
 
 const Stats = () => {
-    const [loading, setLoading] = useState(true)
-    const [data, setData] = useState([])
-    const [querry, setQuerry] = useState("")
+
+        const  {loading, data, setData, fetchData} = useFetch()
+ 
+        const [querry, setQuerry] = useState("")
 
 
     const searchFilter = (e) => {
+        e.preventDefault()
         const results = data.filter(post => {
             if (querry === "") return data
-            return post.name.toLowerCase().includes(e.target.value.toLowerCase())
+            return post.name.toLowerCase().includes(querry.toLowerCase())
         })
-        setQuerry(e.target.value)
-        setData(results)
+        setQuerry('')
+            
+            setData(results)
     }
 
-    const fetchData = async () => {
-
-
-        setLoading(true)
-
-        // waiting for response from Api Call
-        const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=30&page=1&sparkline=false&price_change_percentage=24h');
-        const result = await response.json();
-
-        // console.log(result);
-
-        // disable loading state once data is fetched
-        setLoading(false)
-        setData(result)
-
-    }
-
-    useEffect(() => {
-        fetchData()
-    }, [])
-
+   
 
     if (loading) {
         return <Loader />
@@ -52,7 +36,10 @@ const Stats = () => {
                     Looking For Something ?
                 </span>
                 <div className="input-wrapper">
-                    <input type="text" name="coin" id="coin" value={querry} onChange={searchFilter} />
+                    <form onSubmit={searchFilter}>
+                    <input type="text" name="coin" id="coin" value={querry} onChange={e => setQuerry(e.target.value)} />
+                    <input type="submit" value="Search" />
+                    </form>
                 </div>
                 {(data.length === 0 && <span className='search-heading'>
                     No results Found
@@ -102,9 +89,9 @@ const Stats = () => {
                                 ${item.total_volume.toLocaleString()}
                             </li>
                         </div>
-
                     )
                 })}
+                <button className='btn' onClick={fetchData}>Back</button>
             </article>
         </main>
     )

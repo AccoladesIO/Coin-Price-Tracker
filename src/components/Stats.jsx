@@ -2,13 +2,13 @@ import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Loader from './Loader'
-import { useFetch } from './useFetch'
+import { useFetch } from '../hooks/useFetch'
 
 const Stats = () => {
 
-        const  {loading, data, setData, fetchData} = useFetch()
- 
-        const [querry, setQuerry] = useState("")
+    const { loading, data, setData, fetchData } = useFetch()
+
+    const [querry, setQuerry] = useState("")
 
 
     const searchFilter = (e) => {
@@ -18,11 +18,11 @@ const Stats = () => {
             return post.name.toLowerCase().includes(querry.toLowerCase())
         })
         setQuerry('')
-            
-            setData(results)
+
+        setData(results)
     }
 
-   
+
 
     if (loading) {
         return <Loader />
@@ -37,8 +37,10 @@ const Stats = () => {
                 </span>
                 <div className="input-wrapper">
                     <form onSubmit={searchFilter}>
-                    <input type="text" name="coin" id="coin" value={querry} onChange={e => setQuerry(e.target.value)} />
-                    <input type="submit" value="Search" />
+                        <input type="text" name="coin" id="coin"
+                            value={querry} onChange={e => setQuerry(e.target.value)}
+                        />
+                        <input type="submit" value="Search" />
                     </form>
                 </div>
                 {(data.length === 0 && <span className='search-heading'>
@@ -51,17 +53,17 @@ const Stats = () => {
                         <li className="index">
                             #
                         </li>
-                        <li className="coin">
+                        <li className="indent">
                             Coin
                         </li>
                     </div>
-                    <li className="price">
+                    <li className="indent">
                         Price
                     </li>
-                    <li className="mkt_cap">
+                    <li className="indent">
                         Mkt Capital
                     </li>
-                    <li className="volume">
+                    <li className="indent">
                         Total Suppply
                     </li>
                 </div>
@@ -73,25 +75,27 @@ const Stats = () => {
                                 <li className="index">
                                     {i + 1}
                                 </li>
-                                    <li className="coin">
-                                        <Link to={`/stats/${i + item.id}/`} state={{item: item}}>
+                                <li className="coin">
+                                    <Link 
+                                    to={`/stats/${i + item.id}/`} 
+                                    state={{ item: item }}>
                                         {item.name}
-                                        </Link>
-                                    </li>
+                                    </Link>
+                                </li>
                             </div>
-                            <li className="price">
+                            <li className="indent">
                                 ${item.current_price.toLocaleString()}
                             </li>
-                            <li className="mkt_cap">
+                            <li className="indent">
                                 ${item.market_cap.toLocaleString()}
                             </li>
-                            <li className="volume">
+                            <li className="indent">
                                 ${item.total_volume.toLocaleString()}
                             </li>
                         </div>
                     )
                 })}
-                <button className='btn' onClick={fetchData}>Back</button>
+                <button className='btn margin' onClick={fetchData}>Back</button>
             </article>
         </main>
     )

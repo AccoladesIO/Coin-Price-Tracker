@@ -1,9 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css'
+import About from "./components/About";
+import Company from "./components/Company";
 import DisplayBoard from "./components/DisplayBoard";
 import Hero from './components/Hero'
 import Navbar from './components/Navbar'
+import Resources from "./components/Resources";
 import Stats from './components/Stats'
 
 function App() {
@@ -24,6 +27,27 @@ function App() {
               <>
                 <Navbar />
                 <Stats />
+              </>
+            } />
+          <Route path='/resources'
+            element={
+              <>
+                <Navbar />
+                <Resources />
+              </>
+            } />
+          <Route path='/company'
+            element={
+              <>
+                <Navbar />
+                <Company />
+              </>
+            } />
+          <Route path='/about'
+            element={
+              <>
+                <Navbar />
+                < About/>
               </>
             } />
             <Route path='/stats/:name' element={<DisplayBoard />}/>

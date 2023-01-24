@@ -1,12 +1,12 @@
 :root {
   font-family: primaryFont, sans-serif;
   font-size: 62.5%;
-  line-height: 24px;
+  scroll-behavior: smooth;
   /* font-weight: 400; */
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: rgba(0, 0, 0, 0.824);
+  color: azure;
+  background-color: black;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -17,7 +17,7 @@
   /* max-width: 100vh; */
 }
 a{
-  color: goldenrod;
+  color: rgb(119, 0, 255);
   text-decoration: none;
 }
 *{
@@ -32,4 +32,8 @@ a{
 @font-face {
   font-family: secFont;
   src: url(../src/assets/TCB_____.TTF);
+}
+@font-face {
+  font-family: terFont;
+  src: url(../src/assets/Lato-Light.ttf);
 }

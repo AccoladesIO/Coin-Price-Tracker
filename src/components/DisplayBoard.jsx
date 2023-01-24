@@ -42,7 +42,7 @@ const DisplayBoard = () => {
         <p>ROI: ({item.roi?.currency }) {item.roi?.percentage.toFixed(3)}%</p>
         <p>Total Supply: ${item.total_supply.toLocaleString()}</p>
         <p>Total Volume: ${item.total_volume.toLocaleString()}</p>
-        <button className='btn' onClick={handleClick}>Back</button>
+        <button className='btn margin' onClick={handleClick}>Back</button>
         </article>
       </section>
     </main>

@@ -1,5 +1,6 @@
 import React from 'react'
 import * as Fa from 'react-icons/fa'
+import CoinChart from './CoinChart'
 
 const Graph = () => {
 
@@ -15,6 +16,7 @@ const Graph = () => {
         Check Out The Latest Coin Market Curve.
       </h2>
       <article className="graph-section">
+        <CoinChart />
       </article>
     </section>
   )

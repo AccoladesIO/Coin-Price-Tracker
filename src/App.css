@@ -576,7 +576,25 @@ nav{
 .red{
   color: rgb(230, 66, 66);
 }
+/* .line__chart{
+  width: 100%;
+  height: 500px;
+  margin: 0 auto;
+} */
+.chart__wrapper{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 .graph-section-main{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
   width: 100%;
   height: 100vh;
 }
